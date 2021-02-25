@@ -1,6 +1,6 @@
 FROM node:12-alpine
 
-WORKDIR /api
+WORKDIR /web
 
 EXPOSE 3000
 
