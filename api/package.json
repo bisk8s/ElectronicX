@@ -1,0 +1,26 @@
+{
+   "name": "api",
+   "version": "1.0.0",
+   "description": "EletronicX Full Stack Challenge - Backend",
+   "main": "index.ts",
+   "repository": "https://github.com/bisk8s/EletronicX",
+   "author": "Guilherme Lucena",
+   "license": "MIT",
+   "scripts": {
+      "prestart": "yarn",
+      "start": "ts-node -r tsconfig-paths/register src/server.ts"
+   },
+   "dependencies": {
+      "express": "^4.17.1",
+      "pg": "^8.5.1",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "^0.2.31"
+   },
+   "devDependencies": {
+      "@types/express": "^4.17.11",
+      "@types/node": "^14.14.31",
+      "ts-node": "^9.1.1",
+      "tsconfig-paths": "^3.9.0",
+      "typescript": "^4.2.2"
+   }
+}

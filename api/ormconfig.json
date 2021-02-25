@@ -1,0 +1,27 @@
+{
+   "type": "postgres",
+   "host": "db",
+   "port": 5432,
+   "username": "test",
+   "password": "test",
+   "database": "test",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "src/modules/Users/entity/**/*.ts",
+      "src/modules/Items/entity/**/*.ts"
+   ],
+   "migrations": [
+      "src/modules/Users/migration/**/*.ts",
+      "src/modules/Items/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/modules/Users/subscriber/**/*.ts",
+      "src/modules/Items/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/common/entity",
+      "migrationsDir": "src/common/migration",
+      "subscribersDir": "src/common/subscriber"
+   }
+}
