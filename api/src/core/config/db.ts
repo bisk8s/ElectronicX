@@ -8,6 +8,11 @@ const baseConfig: PostgresConnectionOptions = {
   synchronize: true,
   logging: false,
   ssl: DATABASE_SSL === 'true',
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
   entities: [
     'src/modules/Users/entity/**/*.ts',
     'src/modules/Items/entity/**/*.ts',
