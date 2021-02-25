@@ -5,6 +5,7 @@ const baseConfig: PostgresConnectionOptions = {
   type: 'postgres',
   synchronize: true,
   logging: false,
+  ssl: true,
   entities: [
     'src/modules/Users/entity/**/*.ts',
     'src/modules/Items/entity/**/*.ts',
