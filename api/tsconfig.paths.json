@@ -13,10 +13,18 @@
                 "src/modules/Users/entity/*",
                 "src/modules/Items/entity/*"
             ],
+            "@middlewares/*": [
+                "src/core/middlewares/*"
+            ],
             "@routes/*": [
                 "src/core/routes/*",
                 "src/modules/Users/routes/*",
                 "src/modules/Items/routes/*"
+            ],
+            "@schemas/*": [
+                "src/core/schemas/*",
+                "src/modules/Users/schemas/*",
+                "src/modules/Items/schemas/*"
             ]
         }
     }
