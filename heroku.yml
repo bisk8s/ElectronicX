@@ -2,13 +2,14 @@ setup:
   addons:
     - plan: heroku-postgresql
       as: DATABASE
+  config:
+    APP_NAME: EletricX
 build:
   docker:
     web: ./web/Dockerfile
     api: ./api/Dockerfile
   config:
     NODE_ENV: production
-    PORT: 3000
 run:
   web: yarn start
   api: yarn start
