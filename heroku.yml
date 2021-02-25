@@ -8,6 +8,7 @@ build:
     api: ./api/Dockerfile
   config:
     NODE_ENV: production
+    PORT: 3000
 run:
   web: yarn start
   api: yarn start
