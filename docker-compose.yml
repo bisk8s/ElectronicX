@@ -2,15 +2,17 @@ version: '3.7'
 services:
   web:
     container_name: eletronicx-web
-    build: web/.
-    volumes:
-      - ./web:/web
+    image: node:12-alpine
+    working_dir: /web
     # env_file:
     #   - ./web/.env
+    volumes:
+      - ./web:/web
     expose:
       - "3000"
     ports:
       - "3001:3000"
+    command: yarn start
 
   api:
     container_name: eletronicx-api
@@ -20,9 +22,11 @@ services:
       - ./api/.env
     volumes:
       - ./api:/api
-    command: yarn start
+    expose:
+      - "3000"
     ports:
       - "3002:3000"
+    command: yarn start
     depends_on:
       - "db"
 
