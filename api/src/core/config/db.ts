@@ -1,11 +1,13 @@
 import * as PostgressConnectionStringParser from 'pg-connection-string';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
+const { DATABASE_SSL } = process.env;
+
 const baseConfig: PostgresConnectionOptions = {
   type: 'postgres',
   synchronize: true,
   logging: false,
-  ssl: true,
+  ssl: DATABASE_SSL === 'true',
   entities: [
     'src/modules/Users/entity/**/*.ts',
     'src/modules/Items/entity/**/*.ts',
