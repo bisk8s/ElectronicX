@@ -1,5 +1,5 @@
 FROM node:12-alpine
-WORKDIR /web
+WORKDIR /app
+EXPOSE 3000
 COPY . .
-RUN yarn install --production
 CMD ["yarn", "start"]

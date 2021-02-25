@@ -4,7 +4,7 @@ import * as express from "express";
 
 import rootRoutes from "@routes/Root";
 
-const{SERVER_PORT} = process.env
+const{PORT} = process.env
 
 createConnection().then(async _connection => {
 
@@ -16,7 +16,7 @@ createConnection().then(async _connection => {
 
 
     // start server
-    app.listen(SERVER_PORT);
-    console.log(`Express server has started on port ${SERVER_PORT} 🎉🎉.`);
+    app.listen(PORT);
+    console.log(`Server has started on port ${PORT} 🎉🎉.`);
 
 }).catch(error => console.log(error));
