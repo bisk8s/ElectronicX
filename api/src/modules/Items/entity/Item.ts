@@ -25,6 +25,6 @@ export default class Item {
     @Column()
     quantity:number
 
-    @ManyToMany((type) => ItemCategory) @JoinTable()
+    @ManyToMany(() => ItemCategory) @JoinTable()
     categories: ItemCategory[];
 }

@@ -1,10 +1,8 @@
 import { Router } from 'express';
-import ItemCategoriesController from "@controller/ItemCategoriesController";
-
+import ItemCategoriesController from '@controller/ItemCategoriesController';
 
 const itemCategories = Router();
 const itemCategoryController = new ItemCategoriesController();
-
 
 itemCategories.use(itemCategoryController.startRepository);
 itemCategories.get('/', itemCategoryController.all);
