@@ -1,0 +1,13 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+build:
+  docker:
+    web: ./web/Dockerfile
+    api: ./api/Dockerfile
+  config:
+    NODE_ENV: production
+run:
+  web: yarn start
+  api: yarn start
