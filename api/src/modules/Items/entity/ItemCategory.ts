@@ -1,10 +1,10 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class ItemCategory {
+export default class ItemCategory {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({unique:true})
+    @Column({ unique: true })
     name: string;
 }

@@ -1,5 +1,5 @@
-import {ItemCategoriesController} from "@controller/ItemCategoriesController";
 import { Router } from 'express';
+import ItemCategoriesController from "@controller/ItemCategoriesController";
 
 
 const itemCategories = Router();
