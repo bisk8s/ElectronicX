@@ -2,16 +2,17 @@ import * as PostgressConnectionStringParser from 'pg-connection-string';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
 const { DATABASE_SSL } = process.env;
+const ssl = DATABASE_SSL === 'true';
 
 const baseConfig: PostgresConnectionOptions = {
   type: 'postgres',
   synchronize: true,
   logging: false,
-  ssl: DATABASE_SSL === 'true',
+  ssl,
   extra: {
-    ssl: {
+    ssl: ssl ? {
       rejectUnauthorized: false,
-    },
+    } : null,
   },
   entities: [
     'src/modules/Users/entity/**/*.ts',

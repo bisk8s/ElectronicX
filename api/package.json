@@ -7,8 +7,6 @@
    "author": "Guilherme Lucena",
    "license": "MIT",
    "scripts": {
-      "preinstall": "yarn global add nodemon",
-      "prestart": "yarn",
       "start": "nodemon -e ts,js --exec ts-node -r tsconfig-paths/register src/server.ts"
    },
    "dependencies": {

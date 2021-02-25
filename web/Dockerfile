@@ -5,5 +5,6 @@ WORKDIR /web
 EXPOSE 3000
 
 COPY . .
+RUN yarn
 
 CMD ["yarn", "start"]
