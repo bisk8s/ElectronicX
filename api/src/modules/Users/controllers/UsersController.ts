@@ -18,8 +18,8 @@ export default class UsersController {
   }
 
   async one(request: Request, response:Response) {
-    const entry = await ormRepository.findOne(request.params.id);
-    response.send(entry);
+    const instance = await ormRepository.findOne(request.params.id);
+    response.send(instance);
   }
 
   async save(request: Request, response:Response) {
@@ -34,7 +34,7 @@ export default class UsersController {
   }
 
   async remove(request: Request, response:Response) {
-    if (request. !== request.params.id) {
+    if (request.body.authId !== request.params.id) {
       response.status(401).send({ error: 'You can\'t delete this user' });
     }
     try {

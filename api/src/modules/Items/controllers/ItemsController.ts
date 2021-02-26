@@ -18,13 +18,14 @@ export default class ItemsController {
   }
 
   async one(request: Request, response:Response) {
-    const entry = await ormRepository.findOne(request.params.id);
-    response.send(entry);
+    const instance = await ormRepository.findOne(request.params.id);
+    const categories = await instance.categories;
+    response.send({ ...instance, categories });
   }
 
   async save(request: Request, response:Response) {
     try {
-      const instance = ormRepository.create(request.body);
+      const instance = ormRepository.create(<Item>request.body);
       await ormRepository.save(instance);
       response.send(instance);
     } catch (error) {

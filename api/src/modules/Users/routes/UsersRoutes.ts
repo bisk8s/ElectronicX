@@ -11,6 +11,7 @@ userRoutes.use(usersController.startRepository);
 userRoutes.get('/', usersController.all);
 userRoutes.get('/:id', usersController.one);
 userRoutes.post('/', validate(userSchema), usersController.save);
+
 userRoutes.delete('/:id', verifyAuth, usersController.remove);
 
 export default userRoutes;

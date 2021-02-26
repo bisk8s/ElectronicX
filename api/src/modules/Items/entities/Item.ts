@@ -5,7 +5,6 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-
 import ItemCategory from '@entities/ItemCategory';
 
 @Entity()
@@ -25,6 +24,7 @@ export default class Item {
     @Column()
     quantity:number
 
-    @ManyToMany(() => ItemCategory) @JoinTable()
-    categories: ItemCategory[];
+    @ManyToMany(() => ItemCategory, (itemCategory) => itemCategory.items)
+    @JoinTable()
+    categories: Promise<ItemCategory[]>;
 }
