@@ -2,6 +2,9 @@
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
+            "@root/*": [
+                "src/*"
+            ],
             "@config/*": [
                 "src/core/config/*"
             ],
