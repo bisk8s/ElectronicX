@@ -5,7 +5,7 @@ function Home() {
     <div >
       <header >
           <img src={logo} alt="logo" width={120}/>
-          <h1>Hello EletronicX</h1>
+          <h1>Hello ElectronicX</h1>
       </header>
     </div>
   );

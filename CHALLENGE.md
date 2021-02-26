@@ -1,5 +1,5 @@
 # Challenge:
-Assume this project is for a large retailer (EletronicX).
+Assume this project is for a large retailer (ElectronicX).
 Assume the items they sell can be any electronic product: Radio, Computer,
 Cellphone, Headphones, etc.
 Assume the retailer wants to be able to create new items.

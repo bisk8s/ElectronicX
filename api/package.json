@@ -1,9 +1,9 @@
 {
    "name": "api",
    "version": "1.0.0",
-   "description": "EletronicX Full Stack Challenge - Backend",
+   "description": "ElectronicX Full Stack Challenge - Backend",
    "main": "index.ts",
-   "repository": "https://github.com/bisk8s/EletronicX",
+   "repository": "https://github.com/bisk8s/ElectronicX",
    "author": "Guilherme Lucena",
    "license": "MIT",
    "scripts": {

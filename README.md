@@ -1,4 +1,4 @@
-# EletronicX
+# ElectronicX
 [Full Stack Challenge](CHALLENGE.md)
 #
 

@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   web:
-    container_name: eletronicx-web
+    container_name: ElectronicX-web
     build: ./web
     volumes: 
       - ./web:/web
@@ -9,7 +9,7 @@ services:
       - "3001:3000"
 
   worker:
-    container_name: eletronicx-api
+    container_name: electronicx-api
     build: ./api
     env_file: ./api/.env
     volumes: 
@@ -20,7 +20,7 @@ services:
       - "db"
 
   db:
-    container_name: eletronicx-db
+    container_name: electronicx-db
     image: "postgres:9.6.1"
     expose:
       - "5432"
