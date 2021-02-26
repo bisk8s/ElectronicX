@@ -34,6 +34,9 @@ export default class UsersController {
   }
 
   async remove(request: Request, response:Response) {
+    if (request. !== request.params.id) {
+      response.status(401).send({ error: 'You can\'t delete this user' });
+    }
     try {
       const entryToRemove = await ormRepository.findOne(request.params.id);
       await ormRepository.remove(entryToRemove);

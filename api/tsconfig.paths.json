@@ -14,7 +14,8 @@
                 "src/modules/Items/entities/*"
             ],
             "@middlewares/*": [
-                "src/core/middlewares/*"
+                "src/core/middlewares/*",
+                "src/modules/Users/middlewares/*"
             ],
             "@routes/*": [
                 "src/core/routes/*",

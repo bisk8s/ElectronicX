@@ -19,7 +19,7 @@ export default class Item {
     @Column()
     price:number
 
-    @Column()
+    @Column({ nullable: true })
     image?:string
 
     @Column()
