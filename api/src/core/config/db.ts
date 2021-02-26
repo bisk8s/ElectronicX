@@ -1,19 +1,10 @@
 import * as PostgressConnectionStringParser from 'pg-connection-string';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
-const { DATABASE_SSL } = process.env;
-const ssl = DATABASE_SSL === 'true';
-
 const baseConfig: PostgresConnectionOptions = {
   type: 'postgres',
   synchronize: true,
   logging: false,
-  ssl,
-  extra: {
-    ssl: ssl ? {
-      rejectUnauthorized: false,
-    } : null,
-  },
   entities: [
     'src/modules/Users/entity/**/*.ts',
     'src/modules/Items/entity/**/*.ts',
@@ -33,12 +24,25 @@ const baseConfig: PostgresConnectionOptions = {
   },
 };
 
+const { DATABASE_SSL } = process.env;
+const ssl = DATABASE_SSL === 'true';
+
+const extra = ssl ? {
+  ssl,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
+} : {};
+
 const databaseUrl: string = process.env.DATABASE_URL;
 const connectionOptions = PostgressConnectionStringParser.parse(databaseUrl);
 
 const typeOrmOptions: PostgresConnectionOptions = {
   ...baseConfig,
-  name: connectionOptions.application_name,
+  ...extra,
+  // name: connectionOptions.application_name,
   host: connectionOptions.host,
   port: parseInt(connectionOptions.port, 10),
   username: connectionOptions.user,
