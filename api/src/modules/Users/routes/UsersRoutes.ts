@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import UsersController from '@controller/UsersController';
+import UsersController from '@controllers/UsersController';
 import userSchema from '@schemas/UserSchema';
 import validate from '@middlewares/SchemaValidator';
 

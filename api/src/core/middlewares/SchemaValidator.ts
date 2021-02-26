@@ -6,7 +6,7 @@ function validate(schema:Joi.ObjectSchema) {
     try {
       Joi.attempt(req.body, schema);
     } catch (error) {
-      res.status(422).json({ error });
+      res.status(422).json({ error: 'invalid schema' });
     }
     next();
   };

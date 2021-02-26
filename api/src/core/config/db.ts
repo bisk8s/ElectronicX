@@ -6,21 +6,21 @@ const baseConfig: PostgresConnectionOptions = {
   synchronize: true,
   logging: false,
   entities: [
-    'src/modules/Users/entity/**/*.ts',
-    'src/modules/Items/entity/**/*.ts',
+    'src/modules/Users/entities/**/*.ts',
+    'src/modules/Items/entities/**/*.ts',
   ],
   migrations: [
-    'src/modules/Users/migration/**/*.ts',
-    'src/modules/Items/migration/**/*.ts',
+    'src/modules/Users/migrations/**/*.ts',
+    'src/modules/Items/migrations/**/*.ts',
   ],
   subscribers: [
-    'src/modules/Users/subscriber/**/*.ts',
-    'src/modules/Items/subscriber/**/*.ts',
+    'src/modules/Users/subscribers/**/*.ts',
+    'src/modules/Items/subscribers/**/*.ts',
   ],
   cli: {
-    entitiesDir: 'src/common/entity',
-    migrationsDir: 'src/common/migration',
-    subscribersDir: 'src/common/subscriber',
+    entitiesDir: 'src/common/entities',
+    migrationsDir: 'src/common/migrations',
+    subscribersDir: 'src/common/subscribers',
   },
 };
 

@@ -6,7 +6,7 @@ import {
   JoinTable,
 } from 'typeorm';
 
-import ItemCategory from '@entity/ItemCategory';
+import ItemCategory from '@entities/ItemCategory';
 
 @Entity()
 export default class Item {

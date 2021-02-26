@@ -5,13 +5,13 @@
             "@config/*": [
                 "src/core/config/*"
             ],
-            "@controller/*": [
-                "src/modules/Users/controller/*",
-                "src/modules/Items/controller/*"
+            "@controllers/*": [
+                "src/modules/Users/controllers/*",
+                "src/modules/Items/controllers/*"
             ],
-            "@entity/*": [
-                "src/modules/Users/entity/*",
-                "src/modules/Items/entity/*"
+            "@entities/*": [
+                "src/modules/Users/entities/*",
+                "src/modules/Items/entities/*"
             ],
             "@middlewares/*": [
                 "src/core/middlewares/*"
