@@ -13,5 +13,7 @@ const config: Config.InitialOptions = {
 
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+
+  setupFiles: ['dotenv/config'],
 };
 export default config;

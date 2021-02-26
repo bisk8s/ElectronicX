@@ -8,16 +8,18 @@
    "license": "MIT",
    "scripts": {
       "start": "nodemon -e ts,js --exec ts-node -r tsconfig-paths/register src/server.ts",
-      "test": "jest"
+      "test": "DOTENV_CONFIG_PATH=.env.test jest"
    },
    "dependencies": {
       "bcryptjs": "^2.4.3",
+      "dotenv": "^8.2.0",
       "express": "^4.17.1",
       "joi": "^17.4.0",
       "jsonwebtoken": "^8.5.1",
       "pg": "^8.5.1",
       "pg-connection-string": "^2.4.0",
       "reflect-metadata": "^0.1.13",
+      "sqlite3": "^5.0.2",
       "ts-jest": "^26.5.2",
       "typeorm": "^0.2.31"
    },

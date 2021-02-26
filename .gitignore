@@ -29,3 +29,4 @@
 
 # react garbage
 web/src/react-app-env.d.ts
+api/.env.test
