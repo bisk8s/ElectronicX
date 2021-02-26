@@ -16,7 +16,7 @@ const extraSSL = ssl ? {
   },
 } : {};
 
-const connectionOptions = PostgressConnectionStringParser.parse(DATABASE_URL);
+const connectionOptions = PostgressConnectionStringParser.parse(DATABASE_URL || '');
 
 const postgresConfig:PostgresConnectionOptions = {
   ...extraSSL,
