@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { RootState } from '@redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Navbar,
   NavButton,
@@ -10,8 +13,26 @@ import {
 } from '@components/styled/Navbar';
 
 import logoImage from '@public/logoWhiteBadge.svg';
+import { SystemState } from '@redux/store/system/Types';
+import { SystemActionTypes, UPDATE_SESSION } from '@redux/store/system/ActionTypes';
+import { Dispatch } from 'redux';
 
 export default function Header() {
+  const system:SystemState = useSelector<RootState>((state) => state.system) as SystemState;
+  const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
+  const { loggedIn } = system;
+
+  const doLogout = () => {
+    dispatch({
+      type: UPDATE_SESSION,
+      payload: {
+        userName: '',
+        session: '',
+        loggedIn: false,
+      },
+    });
+  };
+
   return (
     <header>
       <Navbar>
@@ -21,8 +42,17 @@ export default function Header() {
         <NavButton to="/about">About</NavButton>
         <RightPanel>
           <Separator />
-          <NavButton to="/login">Login</NavButton>
-          <NavButton to="/register">Register</NavButton>
+          {loggedIn
+            ? (
+              <NavButton to="/" onClick={doLogout}>Logout</NavButton>
+            )
+            : (
+              <>
+                <NavButton to="/login">Login</NavButton>
+                <NavButton to="/register">Register</NavButton>
+              </>
+            )}
+
         </RightPanel>
       </Navbar>
     </header>

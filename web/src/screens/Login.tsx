@@ -4,6 +4,7 @@ import { Dispatch } from 'redux';
 import { SystemActionTypes, UPDATE_SESSION } from '@redux/store/system/ActionTypes';
 import { StyledInput, StyledLogin } from '@components/styled/Inputs';
 import useAxios from 'axios-hooks';
+import { Redirect } from 'react-router';
 
 export default function Login() {
   const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
@@ -60,6 +61,8 @@ export default function Login() {
       },
     });
   };
+
+  if (postLoginData) return <Redirect to="/" push />;
 
   return (
     <>
