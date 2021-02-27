@@ -1,33 +1,51 @@
 import React from 'react';
-import Headline from '@components/styled/Headline';
-import Navbar from '@components/styled/Wrapper';
+import { Provider } from 'react-redux';
 import {
-  BrowserRouter, Route, Switch, Link,
+  BrowserRouter, Route, Switch,
 } from 'react-router-dom';
+
+import {
+  Navbar,
+  NavButton,
+  LogoPlace,
+  Headline,
+  Separator,
+  RightPanel,
+} from '@components/styled/Navbar';
+import { Footer, ContentWrapper } from '@components/styled/Footer';
+
+import logoImage from '@public/logoWhiteBadge.svg';
 
 import Home from '@screens/Home';
 import About from '@screens/About';
 
-import logo from '@public/logoWhiteBadge.svg';
+import store from '@redux/store';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <header>
-          <Navbar>
-            <img src={logo} className="App-logo" alt="logo" height={60} width={60} />
-            <Headline>ElectronicX</Headline>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </Navbar>
-        </header>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <Provider store={store}>
+      <ContentWrapper>
+        <BrowserRouter>
+          <header>
+            <Navbar>
+              <LogoPlace src={logoImage} className="App-logo" alt="logo" height={60} width={60} />
+              <Headline>ElectronicX</Headline>
+              <NavButton to="/">Home</NavButton>
+              <NavButton to="/about">About</NavButton>
+              <RightPanel>
+                <Separator />
+                <NavButton to="/login">Login</NavButton>
+              </RightPanel>
+            </Navbar>
+          </header>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </BrowserRouter>
+      </ContentWrapper>
+      <Footer />
+    </Provider>
   );
 }
 

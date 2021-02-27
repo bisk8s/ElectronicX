@@ -4,21 +4,21 @@ Assume the items they sell can be any electronic product: Radio, Computer,
 Cellphone, Headphones, etc.
 Assume the retailer wants to be able to create new items.
 ## Requirements:
-### Frontend​ : React
+### Frontend: React
 - (site + /public) \[Public\], list items.
 - (site + /admin) \[Authentication required\] CRUD items.
-- Unit testing (​obligatory)
-### Backend​ : your choice
+- Unit testing (obligatory)
+### Backend: your choice
 - Secure Authentication
   - Login
   - Register
 - CRUD Items
-- Unit testing (​obligatory)
-### Database​ : your choice
+- Unit testing (obligatory)
+### Database: your choice
 - Item
   - Name
   - Price
-  - Image (optional) ​
+  - Image (optional) 
   - Quantity
   - Category (FK)
 - Category
