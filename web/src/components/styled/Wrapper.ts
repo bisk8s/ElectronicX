@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Navbar = styled.nav`
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
     background-color: #333333AA;
 `;
 
-export default Wrapper;
+export default Navbar;
