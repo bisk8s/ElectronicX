@@ -1,11 +1,10 @@
 import { getRepository, Repository } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
-import * as jwt from 'jsonwebtoken';
 
 import User from '@entities/User';
+import getToken from '../utils/GetToken';
 
 let ormRepository: Repository<User>;
-const { APP_SECRET } = process.env;
 
 export default class AuthController {
   startRepository(_rq:Request, _rs:Response, next:NextFunction) {
@@ -20,11 +19,10 @@ export default class AuthController {
       const { username, password } = request.body;
       const user = await ormRepository.findOne({ where: { username }, select: ['id', 'password'] });
 
-      const sucess = await user.comparePassword.bind(user)(password);
-      const token = jwt.sign({ id: user.id }, APP_SECRET, { expiresIn: 86400 });
+      const { success, token } = await getToken(user, password);
 
-      if (sucess) {
-        response.status(200).send({ sucess, token });
+      if (success) {
+        response.status(200).send({ sucess: success, token });
         return;
       }
     } catch (error) {
