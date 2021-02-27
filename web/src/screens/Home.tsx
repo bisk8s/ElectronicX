@@ -1,12 +1,8 @@
-
+import React from 'react';
 
 function Home() {
   return (
-    <div >
-      <header >
-          <h1>Hello ElectronicX</h1>
-      </header>
-    </div>
+    <p>Home</p>
   );
 }
 

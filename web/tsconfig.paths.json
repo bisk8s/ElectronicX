@@ -2,11 +2,20 @@
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
+            "@public/*": [
+                "public/*"
+            ],
+            "@core/*": [
+                "src/core/*"
+            ],
+            "@helpers/*": [
+                "src/helpers/*"
+            ],
             "@screens/*": [
                 "src/screens/*"
             ],
-            "@public/*": [
-                "public/*"
+            "@components/*": [
+                "src/components/*"
             ]
         }
     }
