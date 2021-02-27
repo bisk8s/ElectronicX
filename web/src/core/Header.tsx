@@ -40,6 +40,9 @@ export default function Header() {
         <Headline>ElectronicX</Headline>
         <NavButton to="/">Home</NavButton>
         <NavButton to="/about">About</NavButton>
+        <NavButton to="/items">Items</NavButton>
+        <NavButton to="/itemCategories">Categories</NavButton>
+
         <RightPanel>
           <Separator />
           {loggedIn
