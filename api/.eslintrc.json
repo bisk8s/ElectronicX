@@ -16,11 +16,14 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "import/extensions": [
+            "never"
+        ],
         "class-methods-use-this": [
-            0
+            "never"
         ],
         "import/no-unresolved": [
-            0
+            "never"
         ],
         "no-console": [
             "error",
