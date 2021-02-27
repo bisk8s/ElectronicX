@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 import app from '@root/app';
-import connection from '@root/connection';
+import createConnection from '@root/connection';
 
-connection().then(async () => {
+createConnection().then(async () => {
   const { PORT } = process.env;
   // start server
   app.listen(PORT);

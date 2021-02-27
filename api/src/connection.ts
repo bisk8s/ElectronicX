@@ -1,5 +1,6 @@
-import { createConnection } from 'typeorm';
+import { createConnection as _createConnection } from 'typeorm';
 import typeOrmOptions from '@config/db';
 
-const connection = async () => createConnection(typeOrmOptions);
-export default connection;
+export default async function createConnection(){
+    return await _createConnection(typeOrmOptions);
+}
