@@ -5,7 +5,7 @@ import { SystemActionTypes, UPDATE_SESSION } from '@redux/store/system/ActionTyp
 import { StyledInput, StyledLogin } from '@components/styled/Inputs';
 import useAxios from 'axios-hooks';
 
-export default function Login() {
+export default function Register() {
   const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
 
   const [username, setUsername] = useState('');
@@ -16,24 +16,24 @@ export default function Login() {
 
   const [
     {
-      data: postLoginData,
-      loading: postLoginLoading,
-      error: postLoginError,
+      data: postRegisterData,
+      loading: postRegisterLoading,
+      error: postRegisterError,
     },
     executePost,
   ] = useAxios(
     {
       method: 'POST',
-      url: '/auth',
+      url: '/users',
     },
     { manual: true },
   );
 
   // callback
   useEffect(() => {
-    if (postLoginData) {
+    if (postRegisterData) {
       try {
-        const { token } = postLoginData;
+        const { token } = postRegisterData;
         dispatch({
           type: UPDATE_SESSION,
           payload: {
@@ -46,7 +46,7 @@ export default function Login() {
         // TODO: login error
       }
     }
-  }, [postLoginData]);
+  }, [postRegisterData]);
 
   const doLogin = () => {
     setHasUsername(!!username);
@@ -64,7 +64,7 @@ export default function Login() {
   return (
     <>
       <StyledLogin>
-        <h2>Login</h2>
+        <h2>Register</h2>
 
         <StyledInput
           correct={hasUsername}
@@ -84,9 +84,9 @@ export default function Login() {
           type="button"
           onClick={() => doLogin()}
         >
-          { !postLoginLoading && !postLoginError ? 'Send' : null}
-          { postLoginLoading ? ('Loading') : null}
-          { postLoginError ? ('Error!') : null}
+          { !postRegisterLoading && !postRegisterError ? 'Send' : null}
+          { postRegisterLoading ? ('Loading') : null}
+          { postRegisterError ? ('Error!') : null}
         </button>
       </StyledLogin>
     </>

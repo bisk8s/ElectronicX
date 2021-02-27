@@ -22,6 +22,7 @@ export default function Header() {
         <RightPanel>
           <Separator />
           <NavButton to="/login">Login</NavButton>
+          <NavButton to="/register">Register</NavButton>
         </RightPanel>
       </Navbar>
     </header>
