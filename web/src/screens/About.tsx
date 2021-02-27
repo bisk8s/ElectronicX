@@ -3,6 +3,15 @@ import React from 'react';
 function About() {
   return (
     <article>
+      <h2>About:</h2>
+      <p>
+        Challenge purprosed by
+        {' '}
+        <a href="https://indianatechnologies.dev">indianatechnologies.dev</a>
+        {' '}
+        on Wed, Feb 24 at 12:57 PM GMT-03.
+      </p>
+
       <h2>Challenge:</h2>
       <p>
         Assume this project is for a large retailer (ElectronicX).

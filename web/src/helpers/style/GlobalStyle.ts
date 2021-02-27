@@ -15,6 +15,28 @@ export default createGlobalStyle`
         font-style: normal;
     }
 
+    // Scrollbar
+    html {
+        --scrollbarBG: #33364d33;
+        --thumbBG: #33364dff;
+        }
+    body::-webkit-scrollbar {
+        width: 11px;
+    }
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-track {
+        background-color: var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG) ;
+        border-radius: 6px;
+        border: 2px solid #FFF3;
+    }
+
+    // Base
     html, body{
         background-color: #33364dff;
         color: #FFFFFF;
