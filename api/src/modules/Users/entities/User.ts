@@ -22,11 +22,13 @@ export default class User {
 
     async comparePassword(attempt: string): Promise<boolean> {
       try {
-        const isValid = await compare(attempt, this.password);
-        return isValid;
+        if (attempt && this.password) {
+          const isValid = await compare(attempt, this.password);
+          return isValid;
+        }
       } catch (error) {
         console.error(error);
-        return false;
       }
+      return false;
     }
 }

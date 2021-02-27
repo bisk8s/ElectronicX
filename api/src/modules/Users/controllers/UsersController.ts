@@ -24,9 +24,9 @@ export default class UsersController {
 
   async save(request: Request, response:Response) {
     try {
-      const instance = ormRepository.create(request.body);
+      const instance = ormRepository.create(<User>request.body);
       await ormRepository.save(instance);
-      response.status(200).send({ sucess: true });
+      response.status(200).send({ sucess: true, id: instance.id });
     } catch (error) {
       const { message } = error;
       response.status(422).send({ message });
@@ -36,10 +36,10 @@ export default class UsersController {
   async remove(request: Request, response:Response) {
     if (request.body.authId !== request.params.id) {
       response.status(401).send({ error: 'You can\'t delete this user' });
+      return;
     }
     try {
-      const entryToRemove = await ormRepository.findOne(request.params.id);
-      await ormRepository.remove(entryToRemove);
+      await ormRepository.delete(request.params.id);
       response.status(200).send({ sucess: true });
     } catch (error) {
       const { message } = error;

@@ -22,11 +22,15 @@ export default class AuthController {
 
       const sucess = await user.comparePassword.bind(user)(password);
       const token = jwt.sign({ id: user.id }, APP_SECRET, { expiresIn: 86400 });
+
       if (sucess) {
-        response.send({ sucess, token });
+        response.status(200).send({ sucess, token });
+        return;
       }
     } catch (error) {
-      response.status(422).send(error);
+      const { message } = error;
+      response.status(422).send({ message });
     }
+    response.status(401).send();
   }
 }

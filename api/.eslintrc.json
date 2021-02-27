@@ -17,13 +17,13 @@
     ],
     "rules": {
         "import/extensions": [
-            "never"
+            0
         ],
         "class-methods-use-this": [
-            "never"
+            0
         ],
         "import/no-unresolved": [
-            "never"
+            0
         ],
         "no-console": [
             "error",

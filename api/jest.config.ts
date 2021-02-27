@@ -4,7 +4,7 @@ import { pathsToModuleNameMapper } from 'ts-jest/utils';
 const { compilerOptions } = require('./tsconfig.paths.json');
 
 const config: Config.InitialOptions = {
-  bail: 1,
+  bail: true,
   verbose: true,
   clearMocks: true,
   coverageProvider: 'v8',
