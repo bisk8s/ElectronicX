@@ -71,7 +71,9 @@ function About() {
       <p>
         You have 4 days to finish.
         If you can’t finish the assignment in time, please write in English in the
+        {' '}
         <a href="https://github.com/bisk8s/ElectronicX/blob/master/README.md">README.md</a>
+        {' '}
         howyou would finish the assignment.
       </p>
       <p>
