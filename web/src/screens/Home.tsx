@@ -26,8 +26,8 @@ export default function Home() {
       <div>
         <h3>Top 10 Newest items</h3>
         <ul>
-          {items && items.slice(0, 10).map((user:{name:string, id:number}) => (
-            <li key={user.id}>{user.name}</li>
+          {items && items.slice(0, 10).map((item:{name:string, id:number}) => (
+            <li key={item.id}>{item.name}</li>
           ))}
         </ul>
         <h3>Top 3 Newest users</h3>
