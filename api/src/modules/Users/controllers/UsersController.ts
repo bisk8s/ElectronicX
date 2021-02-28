@@ -14,7 +14,7 @@ export default class UsersController {
   }
 
   async all(_rq:Request, response:Response) {
-    const data = await ormRepository.find();
+    const data = await ormRepository.find({ order: { id: 'DESC' } });
     response.send(data);
   }
 

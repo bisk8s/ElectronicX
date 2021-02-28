@@ -13,7 +13,7 @@ export default class ItemsController {
   }
 
   async all(_rq:Request, response:Response) {
-    const data = await ormRepository.find();
+    const data = await ormRepository.find({ order: { id: 'DESC' } });
     response.send(data);
   }
 
