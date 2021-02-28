@@ -17,7 +17,10 @@ export default class AuthController {
   async authenticate(request: Request, response:Response) {
     try {
       const { username, password } = request.body;
-      const user = await ormRepository.findOne({ where: { username }, select: ['id', 'password'] });
+      const user = await ormRepository.findOne({
+        where: { username },
+        select: ['id', 'password'],
+      });
 
       const { success, token } = await getToken(user, password);
 
