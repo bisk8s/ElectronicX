@@ -12,6 +12,8 @@
     "test": "jest --runInBand"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "add": "^2.0.6",
     "axios": "^0.21.1",
     "axios-hooks": "^2.3.0",

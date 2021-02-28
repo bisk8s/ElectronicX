@@ -78,7 +78,7 @@ function About() {
       </p>
       <p>
         Some of the things are left out on purpose, add your personal style.
-        Upload the finished project to github and send the link to the repo.
+        Upload the finished project to Github and send the link to the repo.
       </p>
     </article>
   );

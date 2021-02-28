@@ -81,8 +81,6 @@ export default createGlobalStyle`
     }
 
     // LIST
-    @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sigmar+One&display=swap');
-
     ol {
         list-style-position: inside;
         counter-reset: list;
@@ -96,11 +94,14 @@ export default createGlobalStyle`
         line-height: 1.5em;
         padding-left: 2.5em;
         margin: 0;
+        &::before {
+            content: "￫ ";
+        }
+        li::before{
+            content:'• '
+        }
     }
 
-    li::before {
-        content: "￫ ";
-    }
 
     .socialLinks{
         width: 100%;

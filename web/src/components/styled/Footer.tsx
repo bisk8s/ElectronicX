@@ -53,4 +53,5 @@ export const ContentWrapper = styled.div`
     min-height: calc(100vh - ${footerHeight});
     display: flex;
     flex-direction: column;
+    article{padding:1em}
 `;
