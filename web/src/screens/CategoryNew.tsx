@@ -17,7 +17,7 @@ export default function CategoryNew() {
   }] = useAxios(
     {
       method: 'GET',
-      url: `/items/${id}`,
+      url: `/itemCategories/${id}`,
     },
   );
 
@@ -31,7 +31,7 @@ export default function CategoryNew() {
   ] = useAxios(
     {
       method: 'POST',
-      url: '/items',
+      url: '/itemCategories',
     },
     { manual: true },
   );
