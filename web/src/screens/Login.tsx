@@ -74,7 +74,6 @@ export default function Login() {
       justify="center"
       alignItems="center"
       spacing={2}
-
     >
 
       <Grid item>

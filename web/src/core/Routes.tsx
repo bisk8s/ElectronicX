@@ -8,6 +8,7 @@ import Register from '@screens/Register';
 
 import Items from '@screens/Items';
 import ItemsSingle from '@screens/ItemSingle';
+import ItemNew from '@screens/ItemNew';
 
 import Categories from '@screens/Categories';
 import CategoriesSingle from '@screens/CategorySingle';
@@ -21,6 +22,7 @@ export default function Routes() {
       <Route path="/register" component={Register} />
 
       <Route path="/items" exact component={Items} />
+      <Route path="/items/new" exact component={ItemNew} />
       <Route path="/items/:id" component={ItemsSingle} />
 
       <Route path="/itemCategories" exact component={Categories} />
