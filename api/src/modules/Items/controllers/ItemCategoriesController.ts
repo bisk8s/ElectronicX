@@ -18,8 +18,8 @@ export default class ItemCategoriesController {
   }
 
   async one(request: Request, response:Response) {
-    const isntance = await ormRepository.findOne(request.params.id);
-    response.send(isntance);
+    const instance = await ormRepository.findOne(request.params.id, { loadEagerRelations: true });
+    response.send(instance);
   }
 
   async save(request: Request, response:Response) {

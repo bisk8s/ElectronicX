@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
 
 import {
-  Button, Grid, TextField, Typography,
+  Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography,
 } from '@material-ui/core';
 import { Redirect, useParams } from 'react-router';
 
@@ -18,12 +18,24 @@ export default function ItemNew() {
   const [quantity, setQuantity] = useState('');
   const [hasQuantity, setHasQuantity] = useState(true);
 
+  const [category, setCategory] = useState('');
+
   const [{
     data: item,
   }] = useAxios(
     {
       method: 'GET',
       url: `/items/${id}`,
+    },
+  );
+
+  const [{
+    data: categories,
+  },
+  ] = useAxios(
+    {
+      method: 'GET',
+      url: '/itemCategories',
     },
   );
 
@@ -54,6 +66,9 @@ export default function ItemNew() {
         name: itemName,
         price,
         quantity,
+        categories: [{
+          id: category,
+        }],
       },
     });
   };
@@ -108,6 +123,23 @@ export default function ItemNew() {
             placeholder="Qty."
             onChange={({ target }) => setQuantity(target.value)}
           />
+        </Grid>
+
+        <Grid item>
+          <FormControl variant="outlined">
+            <InputLabel id="select-label">Category</InputLabel>
+            <Select
+              labelId="select-label"
+              onChange={({ target }) => setCategory(`${target.value}`)}
+              style={{ width: 200 }}
+            >
+              { categories && categories.map((cat:{name:string, id:number}) => (
+                <MenuItem key={cat.id} value={cat.id}>
+                  {cat.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </Grid>
 
         <Grid item xs={2}>

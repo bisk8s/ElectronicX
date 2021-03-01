@@ -141,11 +141,11 @@ export default function Home() {
           </Typography>
         </Grid>
         <Grid item xs={4}>
-          <Typography variant="h4" gutterBottom>Top 10 Newest items:</Typography>
+          <Typography variant="h4" gutterBottom>Top 5 Newest items:</Typography>
           <List>
-            {items && items.slice(0, 10).map((item:{name:string, id:number}) => (
+            {items && items.slice(0, 5).map((item:{name:string, id:number}) => (
               <ListItem key={item.id}>
-                <Link to={`/items/${item.id}`}>
+                <Link to={`/item/${item.id}`}>
                   <ListItemText primary={item.name} />
                 </Link>
               </ListItem>
@@ -156,9 +156,9 @@ export default function Home() {
           <List>
             {users && users.slice(0, 3).map((user:{username:string, id:number}) => (
               <ListItem key={user.id}>
-                <Link to={`/users/${user.id}`}>
-                  <ListItemText primary={user.username} />
-                </Link>
+                {/* <Link to={`/user/${user.id}`}> */}
+                <ListItemText primary={user.username} />
+                {/* </Link> */}
               </ListItem>
             ))}
           </List>

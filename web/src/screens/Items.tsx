@@ -45,30 +45,29 @@ export default function Items() {
   );
 
   return (
-    <article>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography variant="h4" gutterBottom>Items:</Typography>
-        </Grid>
-
-        {loggedIn && (
-          <Grid item xs={2}>
-            <Link to="/item/new">
-              <Button variant="contained">+ Add new Item</Button>
-            </Link>
-          </Grid>
-        )}
-
-        {items && items.map((item:{name:string, id:number}) => (
-          <Grid item xs={2} key={item.id}>
-            <Link to={`/item/${item.id}`}>
-              <Paper className={classes.paper}>
-                {item.name}
-              </Paper>
-            </Link>
-          </Grid>
-        ))}
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <Typography variant="h4" gutterBottom>Items:</Typography>
       </Grid>
-    </article>
+
+      {loggedIn && (
+      <Grid item xs={2}>
+        <Link to="/item/new">
+          <Button variant="contained">+ Add new Item</Button>
+        </Link>
+      </Grid>
+      )}
+
+      {items && items.map((item:{name:string, id:number}) => (
+        <Grid item xs={2} key={item.id}>
+          <Link to={`/item/${item.id}`}>
+            <Paper className={classes.paper}>
+              {item.name}
+            </Paper>
+          </Link>
+        </Grid>
+      ))}
+
+    </Grid>
   );
 }
