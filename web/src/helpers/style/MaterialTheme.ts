@@ -3,7 +3,7 @@ import createPalette from '@material-ui/core/styles/createPalette';
 
 const MaterialTheme = createMuiTheme({
   palette: createPalette({
-    type: 'dark',
+    type: 'light',
   }),
 });
 

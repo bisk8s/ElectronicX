@@ -42,4 +42,5 @@ export default createGlobalStyle`
 
         margin: 1em auto;
     }
+    a{text-decoration:none}
 `;
