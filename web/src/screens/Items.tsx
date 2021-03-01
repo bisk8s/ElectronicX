@@ -61,7 +61,7 @@ export default function Items() {
 
         {items && items.map((item:{name:string, id:number}) => (
           <Grid item xs={2} key={item.id}>
-            <Link to={`/items/${item.id}`}>
+            <Link to={`/item/${item.id}`}>
               <Paper className={classes.paper}>
                 {item.name}
               </Paper>
