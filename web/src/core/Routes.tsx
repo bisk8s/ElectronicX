@@ -12,6 +12,7 @@ import ItemNew from '@screens/ItemNew';
 
 import Categories from '@screens/Categories';
 import CategoriesSingle from '@screens/CategorySingle';
+import CategoryNew from '@screens/CategoryNew';
 
 export default function Routes() {
   return (
@@ -22,11 +23,12 @@ export default function Routes() {
       <Route path="/register" component={Register} />
 
       <Route path="/items" exact component={Items} />
-      <Route path="/items/new" exact component={ItemNew} />
-      <Route path="/items/:id" component={ItemsSingle} />
+      <Route path="/item/new" exact component={ItemNew} />
+      <Route path="/item/:id" component={ItemsSingle} />
 
-      <Route path="/itemCategories" exact component={Categories} />
-      <Route path="/itemCategories/:id" component={CategoriesSingle} />
+      <Route path="/categories" exact component={Categories} />
+      <Route path="/category/new" exact component={CategoryNew} />
+      <Route path="/category/:id" component={CategoriesSingle} />
     </Switch>
   );
 }

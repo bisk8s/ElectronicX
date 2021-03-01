@@ -41,7 +41,7 @@ export default function Header() {
         <NavButton to="/">Home</NavButton>
         <NavButton to="/about">About</NavButton>
         <NavButton to="/items">Items</NavButton>
-        <NavButton to="/itemCategories">Categories</NavButton>
+        <NavButton to="/categories">Categories</NavButton>
 
         <RightPanel>
           <Separator />

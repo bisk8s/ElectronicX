@@ -53,7 +53,7 @@ export default function Items() {
 
         {loggedIn && (
           <Grid item xs={2}>
-            <Link to="/items/new">
+            <Link to="/item/new">
               <Button variant="contained">+ Add new Item</Button>
             </Link>
           </Grid>

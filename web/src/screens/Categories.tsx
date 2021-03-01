@@ -53,7 +53,7 @@ export default function Categories() {
 
         {loggedIn && (
           <Grid item xs={2}>
-            <Link to="/itemCategories/new">
+            <Link to="/category/new">
               <Button variant="contained">+ Add new Category</Button>
             </Link>
           </Grid>
@@ -61,7 +61,7 @@ export default function Categories() {
 
         {categories && categories.map((item:{name:string, id:number}) => (
           <Grid item xs={2} key={item.id}>
-            <Link to={`/itemCategories/${item.id}`}>
+            <Link to={`/category/${item.id}`}>
               <Paper className={classes.paper}>
                 {item.name}
               </Paper>
