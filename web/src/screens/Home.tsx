@@ -1,7 +1,15 @@
 import React, { useEffect } from 'react';
 import useAxios from 'axios-hooks';
 
-import Grid from '@material-ui/core/Grid';
+import {
+  Grid, List, ListItem, ListItemIcon, ListItemText, Typography,
+} from '@material-ui/core';
+
+import WebIcon from '@material-ui/icons/Web';
+import BugReportIcon from '@material-ui/icons/BugReport';
+import RoomServiceIcon from '@material-ui/icons/RoomService';
+import StorageIcon from '@material-ui/icons/Storage';
+
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Home() {
@@ -36,90 +44,124 @@ export default function Home() {
     <article>
       <Grid container spacing={3}>
         <Grid item xs={8}>
-          <h2>Home</h2>
-
-          <p>
+          <Typography variant="body1" gutterBottom>
             Today is the deadline for this challenge.
             I´m adding some final touches to the project frontend and delivering it.
-          </p>
-          <p>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
             It was a good test. I´ve reached a lot in 4 days.
             It is far to be a portfolio project yet, although it is a very stable little project.
-          </p>
-          <p>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
             I´ve lost a little time trying to publish it to
             {' '}
             <a href="https://electricx.herokuapp.com/" target="blank">Heroku</a>
             {' '}
             If I had more time I would have published it, but
             because their container solution is in beta yet, I decided to leave it alone.
-          </p>
-          <p>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
             Also, he goes a list of things I would do if I had had more time:
-          </p>
-          <ul>
-            <ul>
-              <li>
-                Tests:
-                <ul>
-                  <li>
-                    Schema validation for responses in the api
-                  </li>
-                  <li>
-                    Response check for the web app
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Api:
-                <ul>
-                  <li>Emai validation</li>
-                </ul>
-              </li>
-              <li>
-                Web:
-                <ul>
-                  <li>A sexy layout</li>
-                  <li>Shopping cart support</li>
-                </ul>
-              </li>
-              <li>
-                Db:
-                <ul><li>user types [admin/customer]</li></ul>
-              </li>
-            </ul>
-          </ul>
-          <p>
+          </Typography>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <BugReportIcon />
+              </ListItemIcon>
+              <ListItemText primary="Tests:" />
+              <ListItem>
+                <List>
+                  <ListItem>
+                    <ListItemText primary="Schema validation for responses in the api" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary=" Response check for the web app" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Unit testing (obligatory)" />
+                  </ListItem>
+                </List>
+              </ListItem>
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <RoomServiceIcon />
+              </ListItemIcon>
+              <ListItemText primary="Api:" />
+              <ListItem>
+                <List>
+                  <ListItem>
+                    <ListItemText primary="Email validation" />
+                  </ListItem>
+                </List>
+              </ListItem>
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <WebIcon />
+              </ListItemIcon>
+              <ListItemText primary="Web:" />
+              <ListItem>
+                <List>
+                  <ListItem>
+                    <ListItemText primary="A sexy layout" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Shopping cart support" />
+                  </ListItem>
+                </List>
+              </ListItem>
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <StorageIcon />
+              </ListItemIcon>
+              <ListItemText primary="Database:" />
+              <ListItem>
+                <List>
+                  <ListItem>
+                    <ListItemText primary="user types [admin/customer]" />
+                  </ListItem>
+                </List>
+              </ListItem>
+            </ListItem>
+          </List>
+
+          <Typography variant="body1" gutterBottom>
             The next steps for this project would be adding a shopping cart and payment support.
-          </p>
-          <p>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
             I hope that this project had pleased you as it pleases me.
-          </p>
-          <p>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
             Thanks for reading 😎
-          </p>
+          </Typography>
         </Grid>
         <Grid item xs={4}>
-          <h3>Top 10 Newest items:</h3>
-          <ul>
+          <Typography variant="h4" gutterBottom>Top 10 Newest items:</Typography>
+          <List>
             {items && items.slice(0, 10).map((item:{name:string, id:number}) => (
-              <li key={item.id}>
+              <ListItem key={item.id}>
                 <Link to={`/items/${item.id}`}>
-                  {item.name}
+                  <ListItemText primary={item.name} />
                 </Link>
-              </li>
+              </ListItem>
             ))}
-          </ul>
-          <h3>Top 3 Newest users:</h3>
-          <ul>
+          </List>
+
+          <Typography variant="h4" gutterBottom>Top 3 Newest users:</Typography>
+          <List>
             {users && users.slice(0, 3).map((user:{username:string, id:number}) => (
-              <li key={user.id}>
+              <ListItem key={user.id}>
                 <Link to={`/users/${user.id}`}>
-                  {user.username}
+                  <ListItemText primary={user.username} />
                 </Link>
-              </li>
+              </ListItem>
             ))}
-          </ul>
+          </List>
         </Grid>
       </Grid>
     </article>

@@ -12,16 +12,16 @@ import {
   RightPanel,
 } from '@components/styled/Navbar';
 
-import logoImage from '@public/logoWhiteBadge.svg';
+import logoImage from '@public/logoBadge.svg';
 import { SystemState } from '@redux/store/system/Types';
 import { SystemActionTypes, UPDATE_SESSION } from '@redux/store/system/ActionTypes';
 import { Dispatch } from 'redux';
 
 export default function Header() {
   const system:SystemState = useSelector<RootState>((state) => state.system) as SystemState;
-  const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
   const { loggedIn } = system;
 
+  const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
   const doLogout = () => {
     dispatch({
       type: UPDATE_SESSION,
@@ -55,7 +55,6 @@ export default function Header() {
                 <NavButton to="/register">Register</NavButton>
               </>
             )}
-
         </RightPanel>
       </Navbar>
     </header>

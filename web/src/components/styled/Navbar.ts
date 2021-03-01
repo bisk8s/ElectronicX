@@ -6,10 +6,9 @@ export const Navbar = styled.nav`
     flex-direction:row;
     align-items:flex-start;
     justify-content:flex-start;
-    background-color: #333333AA;
 `;
 
-const primaryColor = '#FFF';
+const primaryColor = '#000';
 
 export const LogoPlace = styled.img`
     margin: 1em;
@@ -18,9 +17,11 @@ export const LogoPlace = styled.img`
 
 export const Headline = styled.h1`
     font-family: 'Boltz';
-    margin: 1em;
+    margin: 0.6em;
     margin-left: 0;
     padding: 0.25em;
+    font-weight: 300;
+    font-size:2em;
 `;
 
 export const NavButton = styled(Link)`

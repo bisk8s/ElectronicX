@@ -27,14 +27,14 @@ export const FooterWapper = styled.div`
     flex-direction:row;
     align-items:flex-start;
     justify-content:flex-start;
-    background-color: #333333AA;
+    background-color: #FFFFFFAA;
     position:fixed;
     bottom:0;
     width:100%;
     height:${footerHeight};
 `;
 export const FooterSafeArea = styled.div`
-    background-color: #333333;
+    background-color: #FFFFFF;
     height:${footerHeight};
     width:100%;
     margin-top: 1em;

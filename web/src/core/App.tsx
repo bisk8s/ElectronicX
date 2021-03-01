@@ -1,11 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Footer, ContentWrapper } from '@components/styled/Footer';
 
 import store from '@redux/store';
-import { BrowserRouter } from 'react-router-dom';
 import configureApi from 'src/services/api';
+import MaterialTheme from '@helpers/style/MaterialTheme';
 import Routes from './Routes';
 import Header from './Header';
 
@@ -16,8 +18,10 @@ function App() {
     <Provider store={store}>
       <ContentWrapper>
         <BrowserRouter>
-          <Header />
-          <Routes />
+          <ThemeProvider theme={MaterialTheme}>
+            <Header />
+            <Routes />
+          </ThemeProvider>
         </BrowserRouter>
       </ContentWrapper>
       <Footer />

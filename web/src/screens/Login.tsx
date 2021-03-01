@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import { SystemActionTypes, UPDATE_SESSION } from '@redux/store/system/ActionTypes';
-import { StyledInput, StyledLogin } from '@components/styled/Inputs';
+
 import useAxios from 'axios-hooks';
 import { Redirect } from 'react-router';
+import {
+  Button, Grid, TextField, Typography,
+} from '@material-ui/core';
 
 export default function Login() {
   const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
@@ -65,33 +68,54 @@ export default function Login() {
   if (postLoginData) return <Redirect to="/" push />;
 
   return (
-    <>
-      <StyledLogin>
-        <h2>Login</h2>
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      spacing={2}
 
-        <StyledInput
-          correct={hasUsername}
+    >
+
+      <Grid item>
+        <Typography variant="h4" gutterBottom>Login:</Typography>
+      </Grid>
+
+      <Grid item>
+        <TextField
+          variant="outlined"
+          error={!hasUsername}
+          helperText={!hasUsername ? 'can\'t be empty' : undefined}
           type="text"
           placeholder="username"
           onChange={({ target }) => setUsername(target.value)}
         />
+      </Grid>
 
-        <StyledInput
-          correct={hasPassword}
+      <Grid item>
+        <TextField
+          variant="outlined"
+          error={!hasPassword}
+          helperText={!hasPassword ? 'can\'t be empty' : undefined}
           type="password"
           placeholder="password"
           onChange={({ target }) => setPassword(target.value)}
         />
+      </Grid>
 
-        <button
+      <Grid item>
+        <Button
+          variant="contained"
           type="button"
           onClick={() => doLogin()}
         >
           { !postLoginLoading && !postLoginError ? 'Send' : null}
           { postLoginLoading ? ('Loading') : null}
           { postLoginError ? ('Error!') : null}
-        </button>
-      </StyledLogin>
-    </>
+        </Button>
+      </Grid>
+
+    </Grid>
+
   );
 }
