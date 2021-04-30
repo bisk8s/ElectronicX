@@ -17,13 +17,19 @@ export default createGlobalStyle`
     html {
         --scrollbarBG: #33364d33;
         --thumbBG: #33364dff;
+        margin:0;
+        padding:0;
         }
     body::-webkit-scrollbar {
         width: 11px;
+        height: 11px;
     }
     body {
         scrollbar-width: thin;
         scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+
+        margin:0;
+        padding:0;
     }
     body::-webkit-scrollbar-track {
         background-color: var(--scrollbarBG);
@@ -32,15 +38,6 @@ export default createGlobalStyle`
         background-color: var(--thumbBG) ;
         border-radius: 6px;
         border: 2px solid #FFF3;
-    }
-    .socialLinks{
-        width: 100%;
-        max-width: 550px;
-        display: flex;
-        align-content: 'center';
-        justify-content: space-around;
-
-        margin: 1em auto;
     }
     a{text-decoration:none}
 `;

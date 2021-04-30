@@ -1,6 +1,8 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { ThemeProvider } from 'styled-components';
+import { Provider as ReduxProvider } from 'react-redux';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { CookiesProvider } from 'react-cookie';
+
 import { BrowserRouter } from 'react-router-dom';
 
 import { Footer, ContentWrapper } from '@components/styled/Footer';
@@ -15,17 +17,19 @@ configureApi();
 
 function App() {
   return (
-    <Provider store={store}>
-      <ContentWrapper>
-        <BrowserRouter>
-          <ThemeProvider theme={MaterialTheme}>
-            <Header />
-            <Routes />
-          </ThemeProvider>
-        </BrowserRouter>
-      </ContentWrapper>
-      <Footer />
-    </Provider>
+    <ReduxProvider store={store}>
+      <CookiesProvider>
+        <MuiThemeProvider theme={MaterialTheme}>
+          <ContentWrapper container>
+            <BrowserRouter>
+              <Header />
+              <Routes />
+            </BrowserRouter>
+            <Footer />
+          </ContentWrapper>
+        </MuiThemeProvider>
+      </CookiesProvider>
+    </ReduxProvider>
   );
 }
 

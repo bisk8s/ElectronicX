@@ -8,9 +8,12 @@ import { Redirect } from 'react-router';
 import {
   Button, Grid, TextField, Typography,
 } from '@material-ui/core';
+import { useCookies } from 'react-cookie';
 
 export default function Login() {
   const dispatch = useDispatch<Dispatch<SystemActionTypes>>();
+
+  const [, setCookie] = useCookies(['token', 'username']);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -38,10 +41,12 @@ export default function Login() {
     if (postLoginData) {
       try {
         const { token } = postLoginData;
+        setCookie('token', token, { path: '/' });
+        setCookie('username', username, { path: '/' });
         dispatch({
           type: UPDATE_SESSION,
           payload: {
-            userName: username,
+            username,
             session: token,
             loggedIn: !!token,
           },

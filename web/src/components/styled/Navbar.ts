@@ -1,3 +1,4 @@
+import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,14 +12,11 @@ export const Navbar = styled.nav`
 const primaryColor = '#000';
 
 export const LogoPlace = styled.img`
-    margin: 1em;
     padding: 0;
 `;
 
 export const Headline = styled.h1`
     font-family: 'Boltz';
-    margin: 0.6em;
-    margin-left: 0;
     padding: 0.25em;
     font-weight: 300;
     font-size:2em;
@@ -31,7 +29,7 @@ export const NavButton = styled(Link)`
   text-decoration:none;
 
   font-size: 1em;
-  margin: 2em 1em;
+  
   padding: 0.25em 1em;
   border: 2px solid ${primaryColor};
   border-radius: 3px;
@@ -46,7 +44,7 @@ export const RightPanel = styled.div`
     
 `;
 
-export const Separator = styled.div`
+export const Separator = styled(Grid)`
     margin: 1em 0.25em;
     
     padding: 0em;

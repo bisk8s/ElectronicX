@@ -9,7 +9,7 @@ import {
 const initialState: SystemState = {
   loggedIn: false,
   session: '',
-  userName: '',
+  username: '',
 };
 
 export default function systemReducer(
